@@ -1,0 +1,12 @@
+<button routerLink="/customer">Back</button>
+<h1> Customer Details</h1>
+<div *ngIf="Customer">
+  <h2>{{Customer.Id}}</h2>
+  <h3>{{Customer.FirstName}}{{Customer.LastName}}</h3>
+  <h4>{{Customer.Address}}</h4>
+  <h4> {{Customer.Email}}</h4>
+  <h4> {{Customer.PhoneNumber}}</h4>
+</div>
+<div *ngIf="!Customer">
+  <h2>Customer does not exist</h2>
+</div>

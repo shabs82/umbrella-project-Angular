@@ -1,0 +1,10 @@
+<button routerLink="/customer-add"> Add Customer</button>
+  <ul class="anything">
+    <li *ngFor=" let cust of Customers">
+      <a routerLink="/customer/cust.Id">
+         {{cust.Id}} {{cust.FirstName}} {{cust.LastName}} </a>
+      <button id="something" routerLink="/customer-update/{{cust.Id}}"> Update </button>
+      <button (click)="deleteCustomer(cust.Id)"> Delete Customer</button>
+    </li>
+  </ul>
+

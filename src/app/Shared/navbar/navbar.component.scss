@@ -1,0 +1,35 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: royalblue;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.navbar-right li {
+}
+
+li a {
+  display: flow;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: black;
+  font-size: 17px;
+}
+li a{
+    background-color: royalblue;
+    color: black;
+}
+
+li a:hover{
+  background-color: pink;
+}
+
