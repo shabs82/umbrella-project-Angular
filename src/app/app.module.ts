@@ -13,12 +13,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CustomerAddComponent } from './Customers/customer-add/customer-add.component';
 import { CustomerUpdateComponent } from './Customers/customer-update/customer-update.component';
 import {HttpClientModule} from '@angular/common/http';
-import { UmbrellaComponent } from './umbrella/umbrella.component';
 import { UmbrellaAddComponent } from './umbrella/umbrella-add/umbrella-add.component';
 import { UmbrellaDetailsComponent } from './umbrella/umbrella-details/umbrella-details.component';
 import { UmbrellaUpdateComponent } from './umbrella/umbrella-update/umbrella-update.component';
 import { UserProfileComponent } from './User/user-profile/user-profile.component';
 import { CreateUserComponent } from './User/create-user/create-user.component';
+import { LoginWindowComponent } from './User/login-window/login-window.component';
+import {MatRadioModule} from "@angular/material/radio";
 // @ts-ignore
 
 
@@ -32,12 +33,12 @@ import { CreateUserComponent } from './User/create-user/create-user.component';
     CustomerDetailsComponent,
     CustomerAddComponent,
     CustomerUpdateComponent,
-    UmbrellaComponent,
     UmbrellaAddComponent,
     UmbrellaDetailsComponent,
     UmbrellaUpdateComponent,
     UserProfileComponent,
     CreateUserComponent,
+    LoginWindowComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +47,8 @@ import { CreateUserComponent } from './User/create-user/create-user.component';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,8 +2,15 @@ import { Injectable } from '@angular/core';
 import {Customer} from '../Models/Customer';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {AuthenticationService} from './authentication-service';
+import {environment} from '../../../environments/environment';
 
-
+const httpOptions = {
+    headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    Authorization: 'my-auth-token'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +19,7 @@ export class CustomerService {
   apiUrl = 'https://localhost:44346/api/Customer';
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authenticationService: AuthenticationService) {}
 
   getAllCustomer(): Observable<Customer[]> {
     return this.http.get<Customer[]>
@@ -35,5 +42,14 @@ export class CustomerService {
   }
   deleteCustomer(id: number): Observable<any> {
     return this.http.delete(this.apiUrl + '/' + id);
+  }
+
+  getItems(): Observable<Customer[]> {
+    // add authorization header with jwt token
+      httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+
+    // get users from api
+      return this.http.get<Customer[]>(environment.apiUrl + '/api/todo/', httpOptions);
   }
 }
