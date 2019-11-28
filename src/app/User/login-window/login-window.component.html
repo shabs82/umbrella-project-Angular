@@ -1,11 +1,13 @@
 <div>
+  <app-navbar></app-navbar>
+  <form class="px-4 py-3"  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div>
     <label>Username:</label>
-    <input type="text" required />
+    <input type="email" class="form-control" id="DropdownFormUsername" placeholder="Metalist1" formControlName="username"  required/>
   </div>
   <div>
     <label>Password:</label>
-    <input type="text" required />
+    <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password" formControlName="password" required/>
   </div>
   <div>
       <label>
@@ -13,6 +15,7 @@
       </label>
   </div>
   <div>
-    <button type="button">Sign In</button>
+    <button type="submit" >Sign In</button>
   </div>
+    </form>
 </div>

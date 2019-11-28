@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 // @ts-ignore
-import {AuthenticationService} from '../../Shared/Services/authentication-service';
+import {AuthenticationService} from '../../auth-guard/authentication-service';
 
 
 
@@ -49,7 +49,7 @@ export class LoginWindowComponent implements OnInit {
     this.authenticationService.login(this.username.value, this.password.value)
       .subscribe(
         success => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/customer']);
         },
         error => {
           this.errormessage = error.message;

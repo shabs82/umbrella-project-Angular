@@ -7,15 +7,18 @@ import {UmbrellaListComponent} from './umbrella/umbrella-list/umbrella-list.comp
 import {CustomerDetailsComponent} from './Customers/customer-details/customer-details.component';
 import {CustomerAddComponent} from './Customers/customer-add/customer-add.component';
 import {CustomerUpdateComponent} from './Customers/customer-update/customer-update.component';
+import {LoginWindowComponent} from './User/login-window/login-window.component';
 
+import { AuthenticationGuard } from './auth-guard/guard/auth.guard';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
-  { path: 'product', component: UmbrellaListComponent},
-  { path: 'customer', component: CustomerListComponent},
+  { path: 'product', component: UmbrellaListComponent , canActivate: [AuthenticationGuard]},
+  { path: 'customer', component: CustomerListComponent, canActivate: [AuthenticationGuard]},
   { path: 'customer-add', component: CustomerAddComponent},
   { path: 'customer/:id', component: CustomerDetailsComponent},
-  { path: 'customer-update/:id', component: CustomerUpdateComponent}
+  { path: 'customer-update/:id', component: CustomerUpdateComponent},
+  { path: 'login', component: LoginWindowComponent}
 ];
 
 @NgModule({

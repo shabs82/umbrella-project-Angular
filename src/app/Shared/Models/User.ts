@@ -1,6 +1,7 @@
 export class User {
   Id: number;
-  Username: string;
+  username: string;
   Password: string;
   isComplete: boolean;
+  token: string;
 }

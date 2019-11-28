@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Customer} from '../Models/Customer';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {AuthenticationService} from './authentication-service';
+import {AuthenticationService} from '../../auth-guard/authentication-service';
 import {environment} from '../../../environments/environment';
 
 const httpOptions = {
