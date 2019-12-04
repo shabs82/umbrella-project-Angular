@@ -10,7 +10,7 @@ export class UmbrellaService {
 
   constructor(private http: HttpClient ) { }
 
-  getAllUmbrellas(umb: Umbrella){
+  getAllUmbrellas(umb: Umbrella) {
 
   }
 }
